@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);
+@import url(https://fonts.googleapis.com/css?family=Niconne);
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+input,
+button {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+input,
+button {
+  outline: none;
+  border: none;
+}
+a {
+  text-decoration: none;
+  color: #009688;
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+#nprogress .bar {
+  background-color: orange !important;
+}
+#lock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.lock-top,
+.lock-bottom {
+  width: 100%;
+  height: 50%;
+  background-color: #667aa6;
+}
+.lock-top {
+  animation: toBottom 1.5s ease-in-out;
+}
+.lock-bottom {
+  animation: toTop 1.5s ease-in-out;
+}
+@keyframes toBottom {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes toTop {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
