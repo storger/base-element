@@ -72,11 +72,11 @@ router.beforeEach((to, from, next) => {
 			name: 'login'
 		})
 	}
-	/* if(!permissionMap(store.state.permission,to.name)){
+	if(!permissionMap(store.state.permission,to.name)){
 		next({
 			name:'404'
 		})
-	} */
+	}
 	next();
 })
 router.afterEach(route => {

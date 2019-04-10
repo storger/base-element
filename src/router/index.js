@@ -12,6 +12,11 @@ import error from '@/views/pages/404'
 import base from '@/views/element/children/base'
 import editor from '@/views/element/children/editor'
 
+import file from '@/views/plugins/file'
+import imgpreview from '@/views/plugins/imgpreview'
+import fullcalendar from '@/views/plugins/fullcalendar'
+
+
 export const router = new Router({
 	mode: 'history',
 	routes: [{
@@ -74,6 +79,34 @@ export const asyncRoutesMap = [
 			},
 			component: editor
 		},
+		]
+	},{
+		path:'/plugins',
+		component:layout,
+		children:[
+			{
+				path: 'file',
+				name: 'file',
+				meta: {
+					title: '文件上传',
+				},
+				component: file
+			},
+			{
+				path: 'imgpreview',
+				name: 'imgpreview',
+				meta: {
+					title: '图片预览',
+				},
+				component: imgpreview
+			},{
+				path: 'fullcalendar',
+				name: 'fullcalendar',
+				meta: {
+					title: '日历',
+				},
+				component: fullcalendar
+			}
 		]
 	}
 ]

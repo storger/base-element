@@ -18,7 +18,7 @@ export default {
         return {
             nav:[
                 {
-                    path:'/home',
+                    path:'/page/home',
                     title:'首页'
                 }
             ]
@@ -47,7 +47,7 @@ export default {
         let thisPath = nav[i].path;
         nav.splice(i,1);
         if( i === 0) {
-        this.$router.push('/home');
+        this.$router.push('/page/home');
         }
         if(thisPath == this.$route.path){
           this.$router.push(nav[(nav.length-1)].path);

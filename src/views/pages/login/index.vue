@@ -71,7 +71,7 @@ export default {
 		  username:this.userName
 	  }).then(res => {
 		  let data = res.data.data;
-		  if(data.success){
+		  if(res.data.success){
 			  localStorage.setItem('loginInfo',JSON.stringify(data));
 				this.$store.commit('refreshPermission',data.menu);
 				this.$router.push({name:'home'});

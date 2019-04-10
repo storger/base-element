@@ -1,37 +1,36 @@
 <template>
-    <div>
-        <Top-title icon="icon-yibiao" title="控制面板" stitle="一个简单的 element-ui 后台管理系统模板" crumbs="false"></Top-title>
-        <el-row :gutter="24">
-            <el-col :md="6" :sm="12" :xs="24">
-                <Widget icon="icon-icon_home" bcolor="#009688"></Widget>
-            </el-col>
-            <el-col :md="6" :sm="12" :xs="24">
-                <Widget icon="icon-yibiao" bcolor="#17a2b8"></Widget>
-            </el-col>
-            <el-col :md="6" :sm="12" :xs="24">
-                <Widget icon="icon-icon_home" bcolor="#ffc107"></Widget>
-            </el-col>
-            <el-col :md="6" :sm="12" :xs="24">
-                <Widget icon="icon-yibiao" bcolor="#dc3545"></Widget>
-            </el-col>
-            <el-col :md="12" :sm="24">
-                <el-card>
-                    <Chart :options="option" theme="ovilia-green" :auto-resize="auto"></Chart>
-                </el-card>
-            </el-col>
-            <el-col :md="12" :sm="24">
-                <el-card>
-                    <Chart :options="linebar" theme="ovilia-green" :auto-resize="auto"></Chart>
-                </el-card>
-            </el-col>
-            <el-col :md="24" style="margin-top:20px">
-                <el-card>
-                    <el-amap vid="amapDemo" :zoom="zoom" :center="center"></el-amap>
-                </el-card>
-            </el-col>
-
-        </el-row>
-    </div>
+  <div>
+    <Top-title icon="icon-yibiao" title="控制面板" stitle="一个简单的 element-ui 后台管理系统模板" crumbs="false"></Top-title>
+    <el-row :gutter="24" style="margin-bottom:20px">
+      <el-col :md="6" :sm="12" :xs="24">
+        <Widget icon="icon-icon_home" bcolor="#009688"></Widget>
+      </el-col>
+      <el-col :md="6" :sm="12" :xs="24">
+        <Widget icon="icon-yibiao" bcolor="#17a2b8"></Widget>
+      </el-col>
+      <el-col :md="6" :sm="12" :xs="24">
+        <Widget icon="icon-icon_home" bcolor="#ffc107"></Widget>
+      </el-col>
+      <el-col :md="6" :sm="12" :xs="24">
+        <Widget icon="icon-yibiao" bcolor="#dc3545"></Widget>
+      </el-col>
+      <el-col :md="12" :sm="24">
+        <el-card>
+          <Chart :options="option" theme="ovilia-green" :auto-resize="auto"></Chart>
+        </el-card>
+      </el-col>
+      <el-col :md="12" :sm="24">
+        <el-card>
+          <Chart :options="linebar" theme="ovilia-green" :auto-resize="auto"></Chart>
+        </el-card>
+      </el-col>
+      <el-col :md="24" style="margin-top:20px">
+        <el-card>
+          <el-amap vid="amapDemo" :zoom="zoom" :center="center"></el-amap>
+        </el-card>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
@@ -65,12 +64,12 @@ export default {
     let data = [];
 
     for (let i = 0; i <= 360; i++) {
-      let t = i / 180 * Math.PI;
+      let t = (i / 180) * Math.PI;
       let r = Math.sin(2 * t) * Math.cos(2 * t);
       data.push([r, i]);
     }
     return {
-	auto:true,
+      auto: true,
       option: {
         title: {
           text: "极坐标双数值轴"
@@ -229,7 +228,7 @@ export default {
         ]
       },
       zoom: 18,
-      center: [118.75586,31.973171],
+      center: [118.75586, 31.973171]
     };
   },
   components: {
@@ -242,7 +241,7 @@ export default {
 
 <style lang="less">
 #amapDemo {
-    height: 500px;
+  height: 500px;
 }
 </style>
 

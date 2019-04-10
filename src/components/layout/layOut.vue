@@ -7,7 +7,7 @@
             </section>
             <section class="app-content">
               <Tab-bar v-if="isShow"></Tab-bar>
-              <keep-alive include="home,editor">
+              <keep-alive :max="10">
                 <router-view class="content-view" :style="{'height':isShow?'calc(100% - 40px)':'100%'}"></router-view>
               </keep-alive>
             </section>
@@ -66,8 +66,8 @@ export default {
       height: calc(100vh - 60px);
       overflow: hidden;
       >.content-view {
-        padding:0 20px 20px;
-        overflow:auto;
+        padding:0 20px;
+        overflow:auto !important;
       }
     }
   }

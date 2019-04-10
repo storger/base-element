@@ -8,7 +8,7 @@ if(loginInfo){
 }
 export default new Vuex.Store({
 	state:{
-		permission: MENU
+		permission: MENU,
 	},
 	mutations:{
 		refreshPermission(state,data){

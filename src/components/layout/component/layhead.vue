@@ -15,38 +15,33 @@
     <div class="right">
       <!-- 设置 -->
       <el-dropdown trigger="click">
-        <el-tooltip class="item" effect="dark" content="设置" placement="bottom">
-          <span class="header-btn el-dropdown-link">
-            <i class="el-icon-setting"></i>
-          </span>
-        </el-tooltip>
+        <span class="header-btn el-dropdown-link">
+          <i class="el-icon-setting"></i>
+        </span>
         <el-dropdown-menu slot="dropdown" style="padding:10px 20px;">
-          <el-switch v-model="showTabBar" @change="changeTabBar" active-text="开启TabBar" active-color="#009688" inactive-text="关闭TabBar">
-          </el-switch>
+          <el-switch
+            v-model="showTabBar"
+            @change="changeTabBar"
+            active-text="开启TabBar"
+            active-color="#009688"
+            inactive-text="关闭TabBar"
+          ></el-switch>
         </el-dropdown-menu>
       </el-dropdown>
       <!-- 锁屏 -->
-      <el-tooltip class="item" effect="dark" content="锁屏" placement="bottom">
-        <span class="header-btn el-dropdown-link" @click="showLock">
-          <i class="el-icon iconfont icon-bofangqi-suoping" style="font-size:14px"></i>
-        </span>
-      </el-tooltip>
+      <span class="header-btn el-dropdown-link" @click="showLock">
+        <i class="el-icon iconfont icon-bofangqi-suoping" style="font-size:14px"></i>
+      </span>
       <!-- 全屏 -->
-      <el-tooltip class="item" effect="dark" content="全屏" placement="bottom">
-        <span class="header-btn el-dropdown-link" @click="openFullWindow">
-          <i class="el-icon iconfont icon-fangda" style="font-size:14px"></i>
-        </span>
-      </el-tooltip>
+      <span class="header-btn el-dropdown-link" @click="openFullWindow">
+        <i class="el-icon iconfont icon-fangda" style="font-size:14px"></i>
+      </span>
       <!-- 消息 -->
       <el-popover placement="bottom" title="消息盒子" width="300" trigger="click">
-        <el-alert title="成功提示的文案" type="success" show-icon style="margin-bottom:10px">
-        </el-alert>
-        <el-alert title="消息提示的文案" type="info" show-icon style="margin-bottom:10px">
-        </el-alert>
-        <el-alert title="警告提示的文案" type="warning" show-icon style="margin-bottom:10px">
-        </el-alert>
-        <el-alert title="错误提示的文案" type="error" show-icon style="margin-bottom:10px">
-        </el-alert>
+        <el-alert title="成功提示的文案" type="success" show-icon style="margin-bottom:10px"></el-alert>
+        <el-alert title="消息提示的文案" type="info" show-icon style="margin-bottom:10px"></el-alert>
+        <el-alert title="警告提示的文案" type="warning" show-icon style="margin-bottom:10px"></el-alert>
+        <el-alert title="错误提示的文案" type="error" show-icon style="margin-bottom:10px"></el-alert>
         <el-col style="text-align:center">
           <el-button type="text">查看更多</el-button>
         </el-col>
@@ -58,11 +53,14 @@
       <!-- 个人信息 -->
       <el-dropdown>
         <span class="header-btn header-admin el-dropdown-link">
-          <img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg" alt="">
+          <img
+            src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3448484253,3685836170&fm=27&gp=0.jpg"
+            alt
+          >
           <i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item >个人中心</el-dropdown-item>
+          <el-dropdown-item>个人中心</el-dropdown-item>
           <el-dropdown-item @click.native="layout">退出系统</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -86,8 +84,8 @@ export default {
         type: "warning"
       })
         .then(() => {
-		  window.localStorage.clear();
-		  this.$store.commit('refreshPermission',[]);
+          window.localStorage.clear();
+          this.$store.commit("refreshPermission", []);
           this.$router.push("/login");
         })
         .catch(() => {
@@ -208,7 +206,7 @@ header {
   font-size: 14px;
   cursor: pointer;
   &:hover {
-    background-color: #222d32;;
+    background-color: #222d32;
   }
   &.header-admin {
     width: auto;

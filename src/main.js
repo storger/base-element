@@ -7,12 +7,17 @@ import store from './store';
 import ElementUI from 'element-ui';
 // import 'element-ui/lib/theme-chalk/index.css';
 import './css/theme/index.css';
+
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
+
 import 'nprogress/nprogress.css';
 import './utils/tools';
 import './router/permission';
 
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
+Vue.use(preview)
 
 /* eslint-disable no-new */
 new Vue({
